@@ -10,25 +10,43 @@
             justify-content: center;
             margin: 0;
             background-color: #f8f9fa;
+            overflow: auto; /* Enables scrolling initially */
         }
         .iframe-container {
             display: flex;
             justify-content: center;
             width: 100%;
-            padding: 20px 0; /* Adds spacing from the top */
+            padding: 20px 0;
         }
     </style>
 </head>
 <body>
     <div class="iframe-container">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfAj6mQc-CZQGYHHIe6kbw6sMydKEhcOAFgOQptZgAFVwxP-w/viewform?embedded=true" 
+        <iframe id="googleForm" 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfAj6mQc-CZQGYHHIe6kbw6sMydKEhcOAFgOQptZgAFVwxP-w/viewform?embedded=true" 
                 width="640" 
-                height="5034" 
+                height="1500" 
                 frameborder="0" 
                 marginheight="0" 
                 marginwidth="0">
             Loading…
         </iframe>
     </div>
+
+    <script>
+        document.getElementById('googleForm').onload = function() {
+            const iframe = document.getElementById('googleForm');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+            // Observe changes in the iframe to detect form submission
+            const observer = new MutationObserver(() => {
+                if (iframeDoc.body.innerText.includes("Your response has been recorded")) {
+                    document.body.style.overflow = "hidden"; // Disable scrolling
+                }
+            });
+
+            observer.observe(iframeDoc.body, { childList: true, subtree: true });
+        };
+    </script>
 </body>
 </html>
