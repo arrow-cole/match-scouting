@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Red Scouting</title>
+    <link rel="stylesheet" href="https://arrow-cole.github.io/private.aaroncole.dev/style.css">
+  </head>
+
+  <body>
+    <!-- Logout Button -->
+    <div id="logout" style="text-align: right; padding: 10px;">
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Parallax Pixel Background Animation -->
+    <section class="animated-background">
+      <div id="stars1"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </section>
+    <!-- End of Parallax Pixel Background Animation -->
+
+    <a id="profilePicture" href="#popup">
+      <img src="https://pics.aaroncole.dev/pictures2.png" alt="Profile Picture">
+    </a>
+
+    <div class="overlay" id="popup">
+      <div class="popup">
+        <div class="popup-photo">
+          <a href="https://pics.aaroncole.dev/pictures2.png" target="_blank">
+            <img src="https://pics.aaroncole.dev/pictures2.png" alt="Profile Picture">
+          </a>
+        </div>
+        <div class="popup-quote">
+          17 | They/Them | Arrow | CTD Junior Regonal Staff Member.
+        </div>
+        <a class="popup-close" onclick="history.back()">&times;</a>
+      </div>
+    </div>
+
+    <div id="userName">
+      @Arrow_Cole
+    </div>
+
+    <div id="links">
+      <a class="link" href="match-scouting.html">
+        <i class="fab fa-mail">&nbsp;</i>Match Scouting
+      </a>
+      <a class="link" href="pit-scouting.html">
+        <i class="fab fa-mail">&nbsp;</i>Pit Scouting
+      </a>
+
+  </body>
+</html>
